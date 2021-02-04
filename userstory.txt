@@ -22,11 +22,20 @@ pop up. It is an emotional evaluation with three questions. If all questions hav
 will be able to view the memory for the predetermined amount of time. If not, the user remains on the profile
 page with the option to create more memories. 
 
+https://whimsical.com/safe-web-version-of-softblock-PLoQFuxniVsWhFW1uXiZvw 
+
+
 ICEBOX SoftBlock:
+
 -Mobile version called SoftBlock. Test appears when trying to access selected Apps or contact info on phone.
 -Expand test.
 -Build out a library of questions and answers that can be called upon at random and so previous questions 
     aren't asked.
 -Include math and logic questions to block inebriated Users. 
 -While setting up profile an initial test is taken that determines your math placement.
+
+https://whimsical.com/soft-block-icebox-88vvLkXTqx29XomegjXVnL
+
+
+
 
