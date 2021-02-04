@@ -1,0 +1,32 @@
+SAFE 
+
+In these times, everything is always at our fingertips. And while this accessibility to everything and everyone
+benefits us in unimaginable ways, it can also be detrimental. For those with impulse control issues,
+for adolescents and teens with minds that are still developing and for victims of trauma, easy access to 
+certain memories, contact information, images, writings can prove to be complicated/problematic. This app has 
+this in mind. This app can additionally aid those who just wish to be more reflective before accessing 
+emotionally charged media. Using Safe, the user can choose what it is they would like to safeguard. 
+Stow it away. And revisit it for a set amount of time only after successfully completing an emotional 
+evaluation created by mental health professionals. SAFE will provide a moment to reflect, a speedbump, 
+before accessing the information. This habitual reflection can act like training wheels for those wishing 
+to be more cogniscent of their patterns. 
+
+
+USER STORY:
+
+The user will be able to sign up with an email, name and password. On their profile page they will see the
+option to create a memory. The user will name the memory and it can be in the form of an image or text or both.
+The user will also be able to select an amount of time they will be allowed to view memory if granted access.
+The memories will be logged on the user profile with only their name visible. When clicked on, a test will 
+pop up. It is an emotional evaluation with three questions. If all questions have stable responses, the user
+will be able to view the memory for the predetermined amount of time. If not, the user remains on the profile
+page with the option to create more memories. 
+
+ICEBOX SoftBlock:
+-Mobile version called SoftBlock. Test appears when trying to access selected Apps or contact info on phone.
+-Expand test.
+-Build out a library of questions and answers that can be called upon at random and so previous questions 
+    aren't asked.
+-Include math and logic questions to block inebriated Users. 
+-While setting up profile an initial test is taken that determines your math placement.
+
