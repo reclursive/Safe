@@ -11,7 +11,7 @@ def about(request):
   return render(request, 'about.html')
   
 def profile(request):
-  return render(request, 'profile.html')
+  return render(request, 'User/profile.html')
 
 def signup(request):
   return render(request, 'Registration/signup.html')
