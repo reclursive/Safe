@@ -2,6 +2,8 @@
 {% block content %}
 
 <h1>Sign Up</h1>
-
+<form method="post" action="{% url 'signup' %}">
+    {% csrf_token %}
+    {{form.as_p}}
 
 {% endblock %}
