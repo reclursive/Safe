@@ -5,7 +5,7 @@
 <div class="col s6">
     <form method="POST">
       {% csrf_token %}
-      {{ MemoryForm.as_p }}
+      {{ form.as_p }}
       <input type="submit" class="btn" value="Add Memory">
     </form>
 

@@ -20,7 +20,9 @@ def about(request):
 
 @login_required
 def profile(request):
-  return render(request, 'User/profile.html')
+  memories = Memory.objects.all()
+  context = {'memories': memories}
+  return render(request, 'User/profile.html', context)
 
 def signup(request):
   error_message=''
@@ -28,7 +30,7 @@ def signup(request):
     form = UserCreationForm(request.POST)
     if form.is_valid():
       user = form.save()
-      login(request)
+      login(request, user)
       return redirect('profile')
     else:
       error_message = 'Invalid sign up'
@@ -63,5 +65,5 @@ def memory_new(request):
   current_user = request.user
   form = MemoryForm()
   context= {'form' : form, 'error_message': error_message, 'user': current_user}
-  return render(request, 'User/memory_new.html', context)
+  return render(request, 'memory_new.html', context)
 
