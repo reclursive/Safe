@@ -1,9 +1,13 @@
-from django.shortcuts import render
-
-# Add the following import
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login
+from django.contrib.auth import logout
+from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+
+from .models import Memory 
+# from .forms import RegisterForm, EditUserForm
 
 # Define the home view
 def home(request):
@@ -26,7 +30,7 @@ def signup(request):
       user = form.save()
       # This is how we log a user in via code
       login(request, user)
-      return redirect('profile')
+      return redirect('home')
     else:
       error_message = 'Invalid sign up - try again'
   # A GET or a bad POST request, so render signup.html with an empty form

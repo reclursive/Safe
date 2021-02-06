@@ -5,12 +5,13 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from datetime import datetime
 
 
-# class RegisterForm(UserCreationForm):
-#     city = CityModelChoiceField(queryset=City.objects.all())
-#     class Meta:
-#         model = Profile
-#         fields = ("username", "city", "email",)
-#         help_texts= ""
+class RegisterForm(UserCreationForm):
+    username = forms.CharField(max_length=254, required=False)
+    class Meta:
+        model = User
+        fields = ("name", "email", "password")
+        help_texts= ""
+
 # class EditUserForm(UserChangeForm):
 #     username = forms.CharField(max_length=254, required=False)
 #     password=None

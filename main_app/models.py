@@ -8,7 +8,6 @@ import django.utils.timezone
 # Create your models here.
 
 
-
 class Memory(models.Model):
     name = models.CharField(max_length=250, default='')
     img = models.ImageField(upload_to = "images/", blank=True)
@@ -17,7 +16,7 @@ class Memory(models.Model):
     def __str__(self):
         return self.memory
 
-# class Profile(AbstractUser):
-#     name = models.CharField(max_length=50)
-#     memory = models.ForeignKey(Memory, on_delete=models.CASCADE, default=1, related_name="users")
-#     email = models.CharField(max_length=50)
+
+class Question(models.Model):
+    text = models.CharField(max_length=20000, default='What year is it?')
+    answer = models.CharField(max_length=20000, default='2021')
