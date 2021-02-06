@@ -3,7 +3,7 @@
 {% block content %}
 {% load static %}
 <div class="col s6">
-    <form method="POST">
+    <form method="POST"class="post-form" enctype="multipart/form-data">
       {% csrf_token %}
       {{ form.as_p }}
       <input type="submit" class="btn" value="Add Memory">
