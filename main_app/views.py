@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 # from .forms import RegisterForm
 
 from .models import Memory 
+from .forms import MemoryForm
 # from .forms import RegisterForm, EditUserForm
 
 # Define the home view
@@ -27,7 +28,7 @@ def signup(request):
     form = UserCreationForm(request.POST)
     if form.is_valid():
       user = form.save()
-      login(request, user)
+      login(request)
       return redirect('profile')
     else:
       error_message = 'Invalid sign up'
@@ -38,4 +39,29 @@ def signup(request):
 
 def login(request):
   return render(request, 'Registration/login.html')
+
+
+# def memory_new(request, user_id):
+#   current_user = User.objects.get(id=user_id)
+#   MemoryForm = MemoryForm()
+#   return render(request, 'profile', {
+#     'user': user, 'memory_form': memory_form
+#   })
+
+def memory_new(request):
+  error_message=''
+  if request.method == "POST":
+    form = MemoryForm(request.POST)
+    if form.is_valid():
+      user = request.user
+      memory = form.save(commit=False)
+      memory.save()
+      return redirect('profile')
+    else:
+      print(form.errors)
+      error_message = 'Invalid post input'
+  current_user = request.user
+  form = MemoryForm()
+  context= {'form' : form, 'error_message': error_message, 'user': current_user}
+  return render(request, 'User/memory_new.html', context)
 

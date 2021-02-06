@@ -7,7 +7,7 @@
     {% csrf_token %}
     {{form.as_p}}
   
-    <input type="submit" class="btn-login" value="Login">
+    <button type="submit" class="btn btn-primary" value="login">Log in</button>
     <input type="hidden" name="next" value="{{ next }}">
 
 </form>

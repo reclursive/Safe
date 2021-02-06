@@ -1,10 +1,21 @@
 from django.forms import ModelForm, ModelChoiceField
 from django import forms
 from .models import Memory
+from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from datetime import datetime
 
 
+
+
+
+class MemoryForm(ModelForm):
+    name = forms.CharField(max_length=250)
+    text = forms.CharField(max_length=20000)
+    class Meta:
+        user = User
+        model = Memory
+        fields = ['name', 'img', 'text', 'user']
 
 
 # class Memory_Form(ModelForm):
