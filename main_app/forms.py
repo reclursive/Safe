@@ -5,6 +5,17 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from datetime import datetime
 
 
+
+
+# class Memory_Form(ModelForm):
+#     user = MemoryModelChoiceField(queryset=Memory.objects.all())
+#     name = models.CharField(max_length=250, default='')
+#     img = models.ImageField(upload_to = "images/", blank=True)
+#     text = models.CharField(max_length=20000, default='', blank=True)
+#     class Meta:
+#         model = Memory
+#         fields = ['name', 'img', 'text']
+
 # class RegisterForm(UserCreationForm):
 #     class Meta:
 #         fields = ("name", "email", "password")
