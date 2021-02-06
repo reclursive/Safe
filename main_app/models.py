@@ -20,3 +20,4 @@ class Memory(models.Model):
 class Question(models.Model):
     text = models.CharField(max_length=20000, default='What year is it?')
     answer = models.CharField(max_length=20000, default='2021')
+    
