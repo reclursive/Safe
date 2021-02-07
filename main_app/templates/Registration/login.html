@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
-{% block content %}
 {% load static %}
-
+{% block content %}
 <h1>Log in</h1>
 <form method="POST" action="{% url 'login' %}">
     {% csrf_token %}

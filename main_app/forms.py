@@ -12,6 +12,7 @@ from datetime import datetime
 class MemoryForm(ModelForm):
     name = forms.CharField(max_length=250)
     text = forms.CharField(max_length=20000)
+    user = User
     class Meta:
         user = User
         model = Memory

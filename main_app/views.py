@@ -49,7 +49,7 @@ def login(request):
 #   return render(request, 'profile', {
 #     'user': user, 'memory_form': memory_form
 #   })
-
+@login_required
 def memory_new(request):
   error_message=''
   if request.method == "POST":
@@ -57,6 +57,7 @@ def memory_new(request):
     if form.is_valid():
       user = request.user
       memory = form.save(commit=False)
+      user.username = user
       memory.save()
       return redirect('profile')
     else:
