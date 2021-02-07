@@ -20,7 +20,7 @@ def about(request):
 
 @login_required
 def profile(request):
-  memories = Memory.objects.all()
+  memories = Memory.objects.filter(user_id=request.user.id)
   context = {'memories': memories}
   return render(request, 'User/profile.html', context)
 
@@ -55,9 +55,8 @@ def memory_new(request):
   if request.method == "POST":
     form = MemoryForm(request.POST)
     if form.is_valid():
-      user = request.user
       memory = form.save(commit=False)
-      user.username = user
+      memory.user = request.user
       memory.save()
       return redirect('profile')
     else:
