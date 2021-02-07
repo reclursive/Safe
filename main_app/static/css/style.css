@@ -77,6 +77,7 @@ background-image: linear-gradient( #91C3D2, rgb(105, 105, 155)); */
 
 
 #bignav {
+  padding-top: 16;
   background-image: linear-gradient(to left, #3e5055, rgb(58, 58, 65));
   opacity: 0.75;
   }
@@ -110,8 +111,10 @@ footer {
 
 #softblock {
 
-  width: 33px;
-  height: 33px;
+  width: 55px;
+  height: 55px;
+  
+
   }
 
 
