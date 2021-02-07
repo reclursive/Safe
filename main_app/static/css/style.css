@@ -117,8 +117,8 @@ footer {
   border-radius: 50%;
   background-color: #fff;
   box-shadow:
-    0 0 60px 30px #fff,  /* inner white */
-    0 0 100px 60px rgb(72, 83, 206), /* middle magenta */
+    0 0 60px 30px #fff,  
+    0 0 100px 60px rgb(72, 83, 206), 
     0 0 140px 90px rgb(82, 129, 171);
 
   }
