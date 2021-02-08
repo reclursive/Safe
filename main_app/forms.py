@@ -16,7 +16,7 @@ class MemoryForm(ModelForm):
     # exclude = ('user')
     class Meta:
         model = Memory
-        fields = ['name', 'img', 'text','user']
+        fields = ['name', 'img', 'text']
 
 
 # class Memory_Form(ModelForm):

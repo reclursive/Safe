@@ -30,7 +30,7 @@ def signup(request):
     form = UserCreationForm(request.POST)
     if form.is_valid():
       user = form.save()
-      login(request, user)
+      login(request)
       return redirect('profile')
     else:
       error_message = 'Invalid sign up'
@@ -52,8 +52,11 @@ def login(request):
 @login_required
 def memory_new(request):
   error_message=''
+  form = MemoryForm(request.POST)
   if request.method == "POST":
-    form = MemoryForm(request.POST)
+    # prefill = {'user': request.user}
+    current_user = request.user
+    form = MemoryForm(request.POST, {'user': current_user})
     if form.is_valid():
       memory = form.save(commit=False)
       memory.user = request.user
@@ -71,3 +74,22 @@ def memory_delete(request, memory_id):
   Memory.objects.get(id = memory_id).delete()
   return redirect('profile')
 
+# def edit_memory(request, memory_id):
+#   current_memory = Memory.objects.get(id=memory_id)
+#   if request.method == 'POST':
+#     form = MemoryForm(request.POST, instance=current_memory)
+#     if form.is_valid():
+#       memory = Memory.objects.get(id=memory_id)
+#       if request.POST['name']:
+#         memory.name = request.POST['name']
+#         user_id = request.POST['user']
+#         user = Memory.objects.get(id=user_id)
+#         memory.user = user
+#       memory.save()
+#       return redirect('profile')
+#     else:
+#       print(form.errors)
+#       error_message = 'Invalid input'
+#   form = Edit_Post_Form(initial={'title' : current_post.title, 'body' : current_post.body})
+#   context = {'form' : form, 'post' : current_post}
+#   return render(request, 'User/memory_edit.html', context)
