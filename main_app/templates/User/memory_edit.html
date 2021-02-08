@@ -1,0 +1,18 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>Edit Memory</h1>
+
+<div class="col s6">
+    <form method="POST"class="post-form" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_table }}
+      <input type="submit" class="btn" value="Edit Memory">
+    </form>
+
+    <table class="striped">
+</div>
+
+{% endblock %}

@@ -6,7 +6,11 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from datetime import datetime
 
 
-
+class UpdateMemoryName(ModelChoiceField):
+    name = forms.CharField(max_length=250)
+    class Meta:
+        model = Memory
+        fields = ['name']
 
 
 class MemoryForm(ModelForm):
@@ -17,6 +21,10 @@ class MemoryForm(ModelForm):
     class Meta:
         model = Memory
         fields = ['name', 'img', 'text']
+
+
+
+
 
 
 # class Memory_Form(ModelForm):
