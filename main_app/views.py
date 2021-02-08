@@ -67,7 +67,7 @@ def memory_new(request):
   context= {'form' : form, 'error_message': error_message, 'user': current_user}
   return render(request, 'User/memory_new.html', context)
 
-# def memory_delete(request, memory_id):
-#   Memory.objects.get(id = memory_id).delete()
-#   return redirect('profile')
+def memory_delete(request, memory_id):
+  Memory.objects.get(id = memory_id).delete()
+  return redirect('profile')
 

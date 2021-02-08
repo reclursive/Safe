@@ -12,10 +12,9 @@ from datetime import datetime
 class MemoryForm(ModelForm):
     # name = forms.CharField(max_length=250)
     # text = forms.CharField(max_length=20000)
-    # user = User.username
+    # user_id=request.user.id
     # exclude = ('user')
     class Meta:
-        # user = User.username
         model = Memory
         fields = ['name', 'img', 'text','user']
 

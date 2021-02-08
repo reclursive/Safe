@@ -8,6 +8,7 @@ urlpatterns = [
  path('accounts/signup', views.signup, name= 'signup'),
  path('login', views.login, name= 'login'),
  path('memory_new', views.memory_new, name= 'memory_new'),
+ path('memory_delete/<int:memory_id>/', views.memory_delete, name= 'memory_delete')
 ]
 
 #  path('memory_delete/<int:memory_id>/', views.memory_delete, name= 'memory_delete')
