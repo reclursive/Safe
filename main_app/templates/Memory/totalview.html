@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="clearfix postshow">
+  <img class="memoryphoto" src={{memory.img}} alt="" >
+
+<h1>{{ memory.name }}</h1>
+<h5>{{ memory.text}}</h5>
+<hr>
+
+</div>
+{% endblock %}

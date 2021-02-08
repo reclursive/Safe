@@ -10,6 +10,7 @@ urlpatterns = [
  path('memory_new', views.memory_new, name= 'memory_new'),
  path('memory_delete/<int:memory_id>/', views.memory_delete, name= 'memory_delete'),
  path('memory_edit/<int:memory_id>/', views.memory_edit, name= 'memory_edit'),
+path('memory_show/<int:memory_id>/', views.memory_show, name= 'memory_show'),
 ]
 
 #  path('memory_delete/<int:memory_id>/', views.memory_delete, name= 'memory_delete')

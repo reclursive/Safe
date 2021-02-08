@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.decorators import login_required
 # from .forms import RegisterForm
 
@@ -75,25 +75,58 @@ def memory_delete(request, memory_id):
   return redirect('profile')
 
 
+
 def memory_edit(request, memory_id):
-  current_memory = Memory.objects.get(id=memory_id)
   form = UpdateMemoryName(request.POST)
+  memory = Memory.objects.get(id=memory_id)
+  current_user = request.user
   if request.method == 'POST':
-    # current_user = request.user
-    # form = UpdateMemoryName(request.POST)
     if form.is_valid():
-      memory = Memory.objects.get(id=memory_id)
       if request.POST['name']:
         memory.name = request.POST['name']
-        user = Memory.objects.get(id=user_id)
-        memory.user = user
       memory.save()
       return redirect('profile')
     else:
       print(form.errors)
       error_message = 'Invalid input'
-  context= {'form' : form, 'error_message': error_message, 'user': current_user}
+  context= {'form' : form, 'memory': memory, 'user': current_user}
   return render(request, 'User/memory_edit.html')
+
+
+def memory_show(request, memory_id):
+  current_user = request.user
+  memory = Memory.objects.get(id=memory_id)
+  if request.user.is_authenticated:
+    context = {
+      'user': current_user,
+      'memory': memory,
+      }
+    return render(request, 'Memory/totalview.html', context)
+  else:
+    return redirect('acounts/signup')
+
+
+
+
+# def memory_edit(request, memory_id):
+#   current_memory = Memory.objects.get(id=memory_id)
+#   form = UpdateMemoryName(request.POST)
+#   if request.method == 'POST':
+#     # current_user = request.user
+#     # form = UpdateMemoryName(request.POST)
+#     if form.is_valid():
+#       memory = Memory.objects.get(id=memory_id)
+#       if request.POST['name']:
+#         memory.name = request.POST['name']
+#         user = Memory.objects.get(id=user_id)
+#         memory.user = user
+#       memory.save()
+#       return redirect('profile')
+#     else:
+#       print(form.errors)
+#       error_message = 'Invalid input'
+#   context= {'form' : form, 'error_message': error_message, 'user': current_user}
+#   return render(request, 'User/memory_edit.html')
 
 # def edit_memory(request, memory_id):
   # current_memory = Memory.objects.get(id=memory_id)
