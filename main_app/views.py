@@ -10,7 +10,7 @@ from PIL import Image
 
 
 from .models import Memory 
-from .forms import MemoryForm, UpdateMemoryName
+from .forms import MemoryForm
 
 
 def home(request):
@@ -72,30 +72,12 @@ def memory_new(request):
   return render(request, 'User/memory_new.html', context)
 
 
+
+
 def memory_delete(request, memory_id):
   Memory.objects.get(id = memory_id).delete()
   return redirect('profile')
 
-
-
-def memory_edit(request, memory_id):
-  memory = Memory.objects.get(id=memory_id)
-  form = UpdateMemoryName(request.POST, instance=memory)
-  if request.method == 'POST':
-    form = UpdateMemoryName(request.POST, instance=memory)
-  # memory = Memory.objects.get(id=memory_id)
-    if form.is_valid():
-      memory = Memory.objects.get(id=memory_id)
-      if request.POST['name']:
-        memory.name = request.POST['name']
-      memory.save()
-      return redirect('profile')
-    else:
-      print(form.errors)
-      error_message = 'Invalid input'
-  current_user = request.user
-  context= {'form' : form, 'memory': memory, 'user': current_user}
-  return render(request, 'User/memory_edit.html')
 
 
 def memory_show(request, memory_id):
@@ -110,6 +92,58 @@ def memory_show(request, memory_id):
     return render(request, 'Memory/totalview.html', context)
   else:
     return redirect('acounts/signup')
+
+
+
+
+def memory_edit(request, memory_id):
+  memory = Memory.objects.get(id=memory_id)
+  if request.method == 'POST':
+    if request.POST['name'] != '':
+      memory.name = request.POST['name']
+      memory.save()
+      return redirect('profile')
+    else:
+      print(form.errors)
+      error_message = 'Invalid input'
+      return redirect('profile')
+  context= {'memory': memory}
+  return render(request, 'User/memory_edit.html', context)
+
+
+@login_required
+def test_question1(request, memory_id):
+    # question = Question.objects.get(id=memory_id)
+    # context= {'memory': memory}
+    return render(request, 'Test/question1.html')
+
+@login_required
+def test_question2(request, memory_id):
+  # memory = Memory.objects.get(id=memory_id)
+    # question = Question.objects.get(id=memory_id)
+  return render(request, 'Test/question2.html')
+
+@login_required
+def test_question3(request, memory_id):
+    # question = Question.objects.get(id=memory_id)
+    return render(request, 'Test/question3.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

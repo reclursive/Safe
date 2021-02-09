@@ -2,6 +2,9 @@
 {% block content %}
 
 <h1 id="signup1">Sign Up</h1>
+<!-- {% if form.errors %}
+    <p>username or password not correct</p>
+{% endif %} -->
 <div class= "container">
 <form id="signup1" method="POST" action="{% url 'signup' %}">
     {% csrf_token %}

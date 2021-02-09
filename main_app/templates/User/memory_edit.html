@@ -5,14 +5,12 @@
 
 <h1>Edit Memory</h1>
 
-<div class="col s6">
-    <form method="POST" action="/memory_edit/{{ memory.id }}/">
+<div class="col">
+    <form method="POST" action="{% url 'memory_edit' memory.id %}">
       {% csrf_token %}
-      {{ form.as_p }}
+      <input type="text" name="name" placeholder="{{memory.name}}">
       <input type="submit" class="btn" value="Edit Memory">
     </form>
-
-    <table class="striped">
 </div>
 
 {% endblock %}

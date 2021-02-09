@@ -11,7 +11,7 @@
 {% for memory in memories %}
 <div class="card" style="width: 18rem; border-radius: 33%">
   <div class="card-body">
-    <a href="/memory_show/{{ memory.id }}" class ="link" id= "memoryname">{{ memory.name }}</a>
+    <a href="{{ memory.id }}/question1" class ="link" id= "memoryname">{{ memory.name }}</a>
     <h6 class="card-text">Click on Memory for Evaluation</h6> 
             <a href="{% url 'memory_edit' memory.id %}" class="btn btn-primary">Edit Name</a>
             <a href="{% url 'memory_delete' memory.id %}"class="btn btn-danger">Delete</a>

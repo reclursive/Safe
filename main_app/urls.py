@@ -12,7 +12,10 @@ urlpatterns = [
  path('memory_new', views.memory_new, name= 'memory_new'),
  path('memory_delete/<int:memory_id>/', views.memory_delete, name= 'memory_delete'),
  path('memory_edit/<int:memory_id>/', views.memory_edit, name= 'memory_edit'),
-path('memory_show/<int:memory_id>/', views.memory_show, name= 'memory_show'),
+ path('memory_show/<int:memory_id>/', views.memory_show, name= 'memory_show'),
+ path('<int:memory_id>/question1', views.test_question1, name= 'test_question1'),
+ path('<int:memory_id>/question2', views.test_question2, name= 'test_question2'),
+ path('<int:memory_id>/question3', views.test_question3, name= 'test_question3'),
 ] 
 
 #  path('memory_delete/<int:memory_id>/', views.memory_delete, name= 'memory_delete')
