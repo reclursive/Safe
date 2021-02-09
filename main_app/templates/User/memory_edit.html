@@ -6,7 +6,7 @@
 <h1>Edit Memory</h1>
 
 <div class="col s6">
-    <form method="POST"class="post-form" enctype="multipart/form-data">
+    <form method="POST" action="/memory_edit/{{ memory.id }}/">
       {% csrf_token %}
       {{ form.as_p }}
       <input type="submit" class="btn" value="Edit Memory">

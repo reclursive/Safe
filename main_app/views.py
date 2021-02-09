@@ -71,6 +71,7 @@ def memory_new(request):
   context= {'form' : form, 'error_message': error_message, 'user': current_user}
   return render(request, 'User/memory_new.html', context)
 
+
 def memory_delete(request, memory_id):
   Memory.objects.get(id = memory_id).delete()
   return redirect('profile')
@@ -78,11 +79,13 @@ def memory_delete(request, memory_id):
 
 
 def memory_edit(request, memory_id):
-  form = UpdateMemoryName(request.POST)
   memory = Memory.objects.get(id=memory_id)
-  current_user = request.user
+  form = UpdateMemoryName(request.POST, instance=memory)
   if request.method == 'POST':
+    form = UpdateMemoryName(request.POST, instance=memory)
+  # memory = Memory.objects.get(id=memory_id)
     if form.is_valid():
+      memory = Memory.objects.get(id=memory_id)
       if request.POST['name']:
         memory.name = request.POST['name']
       memory.save()
@@ -90,6 +93,7 @@ def memory_edit(request, memory_id):
     else:
       print(form.errors)
       error_message = 'Invalid input'
+  current_user = request.user
   context= {'form' : form, 'memory': memory, 'user': current_user}
   return render(request, 'User/memory_edit.html')
 
