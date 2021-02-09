@@ -11,9 +11,13 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# MEDIA_ROOT = os.path.join(BASE_DIR, '/images/')
 
 
 # Quick-start development settings - unsuitable for production
@@ -58,6 +62,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
+        'DIRS': [str(BASE_DIR.joinpath('templates'))],
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -123,4 +128,6 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = 'profile'
 LOGOUT_REDIRECT_URL = '/'
+
+# MEDIA_URL = '/images/' 
 

@@ -5,13 +5,14 @@ from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.decorators import login_required
-# from .forms import RegisterForm
+from PIL import Image
+# from SAFE.settings import MEDIA_ROOT
+
 
 from .models import Memory 
 from .forms import MemoryForm, UpdateMemoryName
-# from .forms import RegisterForm, EditUserForm
 
-# Define the home view
+
 def home(request):
   return render(request, 'home.html')
 
@@ -56,7 +57,7 @@ def memory_new(request):
   if request.method == "POST":
     # prefill = {'user': request.user}
     current_user = request.user
-    form = MemoryForm(request.POST, {'user': current_user})
+    form = MemoryForm(request.POST, request.FILES, {'user': current_user})
     if form.is_valid():
       memory = form.save(commit=False)
       memory.user = request.user
@@ -100,6 +101,7 @@ def memory_show(request, memory_id):
     context = {
       'user': current_user,
       'memory': memory,
+      'img': memory.img
       }
     return render(request, 'Memory/totalview.html', context)
   else:

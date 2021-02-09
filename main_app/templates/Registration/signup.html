@@ -2,16 +2,16 @@
 {% block content %}
 
 <h1 id="signup1">Sign Up</h1>
-
+<div class= "container">
 <form id="signup1" method="POST" action="{% url 'signup' %}">
     {% csrf_token %}
     {{form.as_p}}
-  
+
     <button type="submit" class="btn btn-primary" value="signup">Sign Up!</button>
     <!-- <input type="hidden" name="next" value="{{ next }}"> -->
 
   </form>
- 
+</div>
 
 {% endblock %}
 
