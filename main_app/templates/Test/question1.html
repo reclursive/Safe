@@ -3,32 +3,33 @@
 {% load static %}
 {% block content %}
 
-<h1>Question 1</h1>
+<h1>How are you feeling today?</h1>
 
-  <div class="form-check">
+  <div class="form-check d-flex justify-content-center">
     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
     <label class="form-check-label" for="flexRadioDefault1">
-      Default radio
+      Anxious
     </label>
   </div>
-  <div class="form-check">
+  <div class="form-check d-flex justify-content-center">
     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
     <label class="form-check-label" for="flexRadioDefault2">
-      Default checked radio
+      Worried
     </label>
   </div>
-  <div class="form-check">
+  <div class="form-check d-flex justify-content-center">
     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
     <label class="form-check-label" for="flexRadioDefault3">
-      Default checked radio
+      Content
     </label>
   </div>
-  <div class="form-check">
+  <div class="form-check d-flex justify-content-center">
     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
     <label class="form-check-label" for="flexRadioDefault4">
-      Default checked radio
+     Confused
     </label>
   </div>
-
+<div class="row p-4 d-flex justify-content-center align-items-center">
   <a href="{% url 'test_question2' memory.id %}" class="btn btn-primary">Submit</a>
+</div>
 {% endblock %}

@@ -62,7 +62,9 @@ color: #EDEDED;
 box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 
 }
-
+.btn-warning {
+  width: 135px;
+}
 
 
 
@@ -122,6 +124,7 @@ footer {
   border-color: #3D3D40;
   border-radius: 50%;
   box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+  width:135px;
 }
 
 .btn-primary:hover {
