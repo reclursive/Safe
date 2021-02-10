@@ -2,18 +2,34 @@
 {% block content %}
 
 <h1 id="signup1">Sign Up</h1>
-<!-- {% if form.errors %}
-    <p>username or password not correct</p>
-{% endif %} -->
+
 <div class= "container">
 <form id="signup1" method="POST" action="{% url 'signup' %}">
     {% csrf_token %}
     {{form.as_p}}
     <button type="submit" class="btn btn-primary" value="signup">Sign Up!</button>
-    <!-- <input type="hidden" name="next" value="{{ next }}"> -->
-    {% if form.is_vaild%}
+  
   </form>
 </div>
+
+<!-- {{ form.non_field_errors }}
+	<table border="1">
+	{% for field in form.visible_fields %}
+		<tr>
+			<th>{{ field.label_tag }}</th>
+			<td>
+				{{field.errors}}
+				{{ field }}
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+	<input type="submit" class="btn-login" value="Sign Up!" id="signUpButton"/>
+	{% if error_message %}
+		<p class="red-text" style="text-align: center;">{{error_message}} {{ form.errors }}</p>
+	{% endif %}
+
+</form> -->
 
 {% endblock %}
 

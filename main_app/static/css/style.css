@@ -171,9 +171,12 @@ margin-bottom: 2rem;
 }
 
 #memoryname {
-  text-align: center !important;
   color: #EDEDED;
-  padding: 100;
+  padding: 100 ;
+  width: 70px;
+  overflow: hidden;
+  white-space: nowrap;
+  
 }
 
 .container {

@@ -26,7 +26,7 @@ def profile(request):
   return render(request, 'User/profile.html', context)
 
 def signup(request):
-  error_message=''
+  error_message='Invalid sign up'
   if request.method == "POST":
     form = UserCreationForm(request.POST)
     if form.is_valid():
