@@ -112,10 +112,10 @@ footer {
 .btn-danger {
   background-color: #979797;
   border-color: #f50707;
-  color: #f50707;
   border-radius: 50%;
   box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
-
+  position: absolute;
+  left: 15px;
 }
 
 
@@ -126,6 +126,8 @@ footer {
   border-radius: 50%;
   box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
   width:135px;
+  position: absolute;
+  left: 126px;
 }
 
 .btn-primary:hover {
