@@ -113,20 +113,25 @@ def memory_edit(request, memory_id):
 
 @login_required
 def test_question1(request, memory_id):
+  memory = Memory.objects.get(id=memory_id)
     # question = Question.objects.get(id=memory_id)
-    # context= {'memory': memory}
-    return render(request, 'Test/question1.html')
+  context= {'memory': memory}
+  return render(request, 'Test/question1.html', context)
 
 @login_required
 def test_question2(request, memory_id):
+  memory = Memory.objects.get(id=memory_id)
   # memory = Memory.objects.get(id=memory_id)
     # question = Question.objects.get(id=memory_id)
-  return render(request, 'Test/question2.html')
+  context= {'memory': memory}
+  return render(request, 'Test/question2.html', context)
 
 @login_required
 def test_question3(request, memory_id):
+  memory = Memory.objects.get(id=memory_id)
     # question = Question.objects.get(id=memory_id)
-    return render(request, 'Test/question3.html')
+  context= {'memory': memory}
+  return render(request, 'Test/question3.html', context)
 
 
 
