@@ -184,6 +184,12 @@ margin-bottom: 2rem;
   font-size:1.25em;
 }
 
+.modal-title {
+  color:black !important;
+}
+.modal-body {
+  color:black !important;
+}
 
 /* .form-check {
   text-align: center !important;

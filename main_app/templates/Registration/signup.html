@@ -9,10 +9,9 @@
 <form id="signup1" method="POST" action="{% url 'signup' %}">
     {% csrf_token %}
     {{form.as_p}}
-
     <button type="submit" class="btn btn-primary" value="signup">Sign Up!</button>
     <!-- <input type="hidden" name="next" value="{{ next }}"> -->
-
+    {% if form.is_vaild%}
   </form>
 </div>
 
