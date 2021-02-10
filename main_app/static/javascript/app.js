@@ -1,3 +1,1 @@
-function sayHello(){
-    alert("Hello");
-  }
+const testQs = $('.form-check-input1 input:radio:checked').val()
