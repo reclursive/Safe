@@ -18,7 +18,7 @@
     </label>
   </div>
   <div class="form-check d-flex justify-content-center">
-    <input class="form-check-input1" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
     <label class="form-check-label" for="flexRadioDefault3">
       Content
     </label>
@@ -29,13 +29,22 @@
      Confused
     </label>
   </div>
-  {%if testQs == 'Content'%} 
+  <!-- {%if testQs == 'Content'%}  -->
+<div>
+<script>
+  // ($('#lexRadioDefault3').is(':checked'))
+  $(document).ready(function(){$('div').css('color', 'red')})
+</script>
+</div>
 <div class="row p-4 d-flex justify-content-center align-items-center">
   <a href="{% url 'test_question2' memory.id %}" class="btn btn-primary">Submit</a>
 </div>
-  {%else%}
+<script>
+  // else
+</script>
+  <!-- {%else%} -->
 <div class="row p-4 d-flex justify-content-center align-items-center">
-  <a href="{% url 'profile'%}" class="btn btn-primary">Submit</a>
+  <a href="{% url 'profile'%}" class="btn btn-primary" id="test-submit">Submit</a>
 </div>
    {%endif%}
 {% endblock %}
