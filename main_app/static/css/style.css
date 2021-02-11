@@ -14,6 +14,9 @@ h1{
   color: #dbdbe6;
 }
 
+.wellness {
+  text-align: center;
+}
 
 
 
@@ -111,6 +114,8 @@ box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15p
 .nav-link {
   color: #91C3D2 !important;
   }
+
+
 
 .nav-item1 {
   transition: all 0.3s ease-in-out 0s;

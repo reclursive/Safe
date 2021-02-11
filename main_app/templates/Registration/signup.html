@@ -6,7 +6,9 @@
 <div class= "container">
 <form id="signup1" method="POST" action="{% url 'signup' %}">
     {% csrf_token %}
+    <container>
     {{form.as_p}}
+  </container>
     <button type="submit" class="btn btn-primary" value="signup">Sign Up!</button>
   
   </form>
