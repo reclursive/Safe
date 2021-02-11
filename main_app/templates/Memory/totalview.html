@@ -16,33 +16,13 @@ $(document).ready(function(){
     if(time === 0){
       window.location.replace("{% url 'home' %}");
     }
-  }, 1000);
+  }, 2500);
 }
 )});
 </script>
 
-  <!-- <script>
-// $(document).ready(function(){
-//   $(".btn-light").click(function(){
-//   $(".blurry").hide();
-//   $(".btn-light").hide();
-//   let time = 240
-//   const ager = setInterval(function (){
-//       time--;
-//       $(".time").text(`Seconds: ${time}`);
-
-//       if (time === 0) {
-//           $("#blurry").show();
-//           clearInterval(ager);
-//       }
-
-//   }, 5000);
-// }
-// )});
-// </script> -->
-
 <!-- <button type="submit" class="btn btn-light" id="reveal">Reveal</button> -->
-<section class="timer">Minutes: 10 </section>
+<h2 class="timer">Minutes: 10 </h2>
 <div class="clearfix-postshow">
   <img class="memoryphoto" src={{memory.img.url}} alt="" > </div>
 
