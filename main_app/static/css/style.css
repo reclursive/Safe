@@ -83,6 +83,10 @@ box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15p
 
 }
 
+.nav-item {
+  padding-left: 30px;
+  padding-top: 10px;
+}
 
 
 
@@ -215,6 +219,7 @@ margin-bottom: 4rem;
 .memoryphoto {
   border-radius: 50%;
   display: block;
+  margin-top: 25px;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
