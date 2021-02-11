@@ -12,7 +12,7 @@
 {% for memory in memories %}
 <div class="card" style="width: 18rem; border-radius: 33%">
   <div class="card-body">
-    <a href="{% url 'test_question1' memory.id %}" class ="link" id= "memoryname">{{ memory.name }}</a>
+    <a href="{% url 'test_question1' memory.id %}" class ="btn btn-info">{{ memory.name }}</a>
     <h6 class="card-text">Click on Memory for Evaluation</h6> 
     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
       Delete

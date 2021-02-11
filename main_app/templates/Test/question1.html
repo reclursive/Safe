@@ -2,7 +2,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<h1>How are you feeling today?</h1>
+<h1 id="homeblock">How are you feeling today?</h1>
 
   <div class="form-check d-flex justify-content-center">
     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
@@ -27,6 +27,20 @@
     <label class="form-check-label" for="flexRadioDefault4">
      Confused
     </label>
+<script>
+    $(document).ready(function(){
+        $('input[type="radio"]').click(function(){
+            if($("#flexRadioDefault3").prop("checked") == true){
+                console.log("Checkbox is checked.");
+            }
+            else if($("#flexRadioDefault3").prop("checked") == false){
+                console.log("Checkbox is unchecked.");
+            }
+        });
+    });
+</script>
+
+  <!-- if document.getElementById("#flexRadioDefault3").checked = true; -->
   </div>
   <div class="row p-4 d-flex justify-content-center align-items-center">
     <a href="{% url 'test_question2' memory.id %}" class="btn btn-light">Submit</a>

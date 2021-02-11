@@ -210,21 +210,32 @@ margin-bottom: 4rem;
 
 }
 
-#memoryname {
-  color: #EDEDED;
-  /* padding: 100 ; */
-  width: 70px;
+/* #memoryname  */
+  /* color: #EDEDED; */
+  /* width: 70px;
   overflow: hidden;
-  white-space: nowrap;
+  white-space: nowrap; */
   
-}
+
 
 .container {
   color: #EDEDED !important;
 }
 
-.link {
+.btn-info {
   font-size:1.25em;
+  border-radius: 10%;
+  background-color: #6382a9;
+  border-color: #4e80cd;
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+  width:120px;
+  
+ 
+  
+}
+
+.btn-info:hover {
+  background-color: #91C3D2
 }
 
 .modal-title {
