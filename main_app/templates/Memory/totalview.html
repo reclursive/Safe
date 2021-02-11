@@ -2,8 +2,43 @@
 {% load static %}
 {% block content %}
 
+
+
+<script>
+$(document).ready(function(){
+  $(".blurry").click(function(){
+  $(".blurry").hide();
+  $("#reveal").hide();
+  });
+});
+</script>
+<h5 id="reveal">Reveal</h5>
+ <!-- <script>
+// $(document).ready(function(){
+//   $(".btn-light").click(function(){
+//   $(".blurry").hide();
+//   $(".btn-light").hide();
+//   let time = 240
+//   const ager = setInterval(function (){
+//       time--;
+//       $(".time").text(`Seconds: ${time}`);
+
+//       if (time === 0) {
+//           $("#blurry").show();
+//           clearInterval(ager);
+//       }
+
+//   }, 5000);
+// }
+// )});
+// </script> -->
+
+<!-- <button type="submit" class="btn btn-light" id="reveal">Reveal</button> -->
+<section class="timer">Time: 15:00m </section>
 <div class="clearfix-postshow">
   <img class="memoryphoto" src={{memory.img.url}} alt="" > </div>
+
+  <img class="blurry" src="{% static 'images/blurry-blue.jpg' %}"> 
 
 <h1>{{ memory.name }}</h1>
 <h5>{{ memory.text}}</h5>
@@ -12,3 +47,4 @@
 
 </div>
 {% endblock %}
+
