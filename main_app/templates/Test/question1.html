@@ -31,6 +31,9 @@
     $(document).ready(function(){
         $('input[type="radio"]').click(function(){
             if($("#flexRadioDefault3").prop("checked") == true){
+              const oldUrl = $(".btn-light").attr("href"); 
+              const newUrl = oldUrl.replace("{% url 'test_question2' memory.id %}");
+              $(oldUrl).attr("href", newUrl); 
                 console.log("Checkbox is checked.");
             }
             else if($("#flexRadioDefault3").prop("checked") == false){
@@ -41,9 +44,9 @@
 </script>
 
   <!-- if document.getElementById("#flexRadioDefault3").checked = true; -->
-  </div>
+  </div class="ontonext">
   <div class="row p-4 d-flex justify-content-center align-items-center">
-    <a href="{% url 'test_question2' memory.id %}" class="btn btn-light">Submit</a>
+    <a href="{% url 'profile' %}" class="btn btn-light">Submit</a>
   </div>
 <!-- <div class="row p-4 d-flex justify-content-center align-items-center">
   <a href="{% url 'profile' %}" class="btn btn-light">Submit</a>
