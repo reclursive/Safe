@@ -8,11 +8,11 @@
 $(document).ready(function(){
   $(".blurry").click(function(){
   $(".blurry").hide();
-  $("#reveal").hide();
+  $(".reveal").hide();
   });
 });
 </script>
-<h5 id="reveal">Reveal</h5>
+
  <!-- <script>
 // $(document).ready(function(){
 //   $(".btn-light").click(function(){
@@ -38,7 +38,10 @@ $(document).ready(function(){
 <div class="clearfix-postshow">
   <img class="memoryphoto" src={{memory.img.url}} alt="" > </div>
 
+<div class="coverimage">
+  <h5 class="reveal">Cick to Reveal</h5>
   <img class="blurry" src="{% static 'images/blurry-blue.jpg' %}"> 
+</div>
 
 <h1>{{ memory.name }}</h1>
 <h5>{{ memory.text}}</h5>
