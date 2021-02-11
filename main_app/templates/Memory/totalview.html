@@ -9,11 +9,19 @@ $(document).ready(function(){
   $(".blurry").click(function(){
   $(".blurry").hide();
   $(".reveal").hide();
-  });
-});
+  let time = 10;
+  const timer= setInterval(function(){
+    time--;
+    $(".timer").text(`Minutes: ${time}`);
+    if(time === 0){
+      window.location.replace("{% url 'home' %}");
+    }
+  }, 1000);
+}
+)});
 </script>
 
- <!-- <script>
+  <!-- <script>
 // $(document).ready(function(){
 //   $(".btn-light").click(function(){
 //   $(".blurry").hide();
@@ -34,7 +42,7 @@ $(document).ready(function(){
 // </script> -->
 
 <!-- <button type="submit" class="btn btn-light" id="reveal">Reveal</button> -->
-<section class="timer">Time: 15:00m </section>
+<section class="timer">Minutes: 10 </section>
 <div class="clearfix-postshow">
   <img class="memoryphoto" src={{memory.img.url}} alt="" > </div>
 
