@@ -28,16 +28,13 @@
      Confused
     </label>
   </div>
-{% if selected_choice == 'Content' %}
-<div class="row p-4 d-flex justify-content-center align-items-center">
+  <div class="row p-4 d-flex justify-content-center align-items-center">
+    <a href="{% url 'test_question2' memory.id %}" class="btn btn-light">Submit</a>
+  </div>
+<!-- <div class="row p-4 d-flex justify-content-center align-items-center">
   <a href="{% url 'profile' %}" class="btn btn-light">Submit</a>
-</div>
-{%else%}
-<div class="row p-4 d-flex justify-content-center align-items-center">
-  <a href="{% url 'profile' %}" class="btn btn-light">Submit</a>
-</div>
+</div> -->
 
-{%endif%}
 
 
 {% endblock %}
