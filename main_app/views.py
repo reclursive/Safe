@@ -16,6 +16,9 @@ from .forms import MemoryForm
 def home(request):
   return render(request, 'home.html')
 
+def wellness_center(request):
+  return render(request, 'Wellness/wellness.html')
+
 def about(request):
   return render(request, 'about.html')
 
