@@ -29,7 +29,22 @@
       Confusion
     </label>
   </div>
+  <script>
+    $(document).ready(function(){
+        $('input[type="radio"]').click(function(){
+            if($("#flexRadioDefault3").prop("checked") == true){
+              const oldUrl = $(".btn-light").attr("href"); 
+              const newUrl = oldUrl.replace("{% url 'wellness_center' %}","{% url 'memory_show' memory.id %}");
+              $(".btn-light").attr("href", newUrl); 
+                console.log("Checkbox is checked.");
+            }
+            else if ($("#flexRadioDefault3").prop("checked") == false){
+                console.log("Checkbox is unchecked.");
+            }
+        });
+    });
+</script>
   <div class="row p-4 d-flex justify-content-center align-items-center">
-  <a href="{% url 'memory_show' memory.id %}" class="btn btn-light">Submit</a>
+  <a href="{% url 'wellness_center' %}" class="btn btn-light">Submit</a>
     </div>
 {% endblock %}
