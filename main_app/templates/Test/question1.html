@@ -33,10 +33,10 @@
             if($("#flexRadioDefault3").prop("checked") == true){
               const oldUrl = $(".btn-light").attr("href"); 
               const newUrl = oldUrl.replace("{% url 'test_question2' memory.id %}");
-              $(oldUrl).attr("href", newUrl); 
+              $(".btn-light").attr("href", newUrl); 
                 console.log("Checkbox is checked.");
             }
-            else if($("#flexRadioDefault3").prop("checked") == false){
+            else if ($("#flexRadioDefault3").prop("checked") == false){
                 console.log("Checkbox is unchecked.");
             }
         });
