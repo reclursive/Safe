@@ -32,20 +32,22 @@
   <script>
     $(document).ready(function(){
         $('input[type="radio"]').click(function(){
-            if($("#flexRadioDefault2").prop("checked") == true){
+            if($("#flexRadioDefault2").prop("checked") == false){
               const oldUrl = $(".btn-light").attr("href"); 
-              const newUrl = oldUrl.replace("{% url 'wellness_center' %}","{% url 'test_question3' memory.id %}");
+              const newUrl = oldUrl.replace("{% url 'test_question3' memory.id %}","{% url 'wellness_center' %}");
               $(".btn-light").attr("href", newUrl); 
                 console.log("Checkbox is checked.");
             }
-            else if ($("#flexRadioDefault3").prop("checked") == false){
+            
+            else if ($("#flexRadioDefault2").prop("checked") == false){
                 console.log("Checkbox is unchecked.");
             }
+            
         });
     });
 </script>
   <div class="row p-4 d-flex justify-content-center align-items-center">
-  <a href="{% url 'wellness_center' %}" class="btn btn-light">Submit</a>
+  <a href="{% url 'test_question3' memory.id %}" class="btn btn-light">Submit</a>
   </div>
 {% endblock %}
 
