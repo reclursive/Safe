@@ -2,7 +2,6 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
 <h1>How are you feeling today?</h1>
 
   <div class="form-check d-flex justify-content-center">
@@ -29,22 +28,16 @@
      Confused
     </label>
   </div>
-  <!-- {%if testQs == 'Content'%}  -->
-<div>
-<script>
-  // ($('#lexRadioDefault3').is(':checked'))
-  $(document).ready(function(){$('div').css('color', 'red')})
-</script>
-</div>
+{% if selected_choice == 'Content' %}
 <div class="row p-4 d-flex justify-content-center align-items-center">
-  <a href="{% url 'test_question2' memory.id %}" class="btn btn-primary">Submit</a>
+  <a href="{% url 'profile' %}" class="btn btn-light">Submit</a>
 </div>
-<script>
-  // else
-</script>
-  <!-- {%else%} -->
+{%else%}
 <div class="row p-4 d-flex justify-content-center align-items-center">
-  <a href="{% url 'profile'%}" class="btn btn-primary" id="test-submit">Submit</a>
+  <a href="{% url 'profile' %}" class="btn btn-light">Submit</a>
 </div>
-   {%endif%}
+
+{%endif%}
+
+
 {% endblock %}

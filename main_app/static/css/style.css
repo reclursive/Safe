@@ -160,8 +160,8 @@ text-align: center;
 .card {
 margin: auto;
 background-image: linear-gradient(to left, #94aab1, rgb(102, 146, 175)); 
-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
-margin-bottom: 2rem;
+box-shadow: -10px 0px 44px -7px #000000, 10px 0px 44px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+margin-bottom: 4rem;
 }
 
 .card-text {
@@ -174,7 +174,7 @@ margin-bottom: 2rem;
 
 #memoryname {
   color: #EDEDED;
-  padding: 100 ;
+  /* padding: 100 ; */
   width: 70px;
   overflow: hidden;
   white-space: nowrap;
@@ -194,6 +194,22 @@ margin-bottom: 2rem;
 }
 .modal-body {
   color:black !important;
+}
+
+.test-submit {
+  text-align: center;
+
+}
+
+.btn-light {
+  color: white;
+  background-color: #979797;
+  border-color: #3D3D40;
+  border-radius: 50%;
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+  width:135px;
+  position: absolute;
+
 }
 
 /* .form-check {

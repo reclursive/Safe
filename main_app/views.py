@@ -9,7 +9,7 @@ from PIL import Image
 # from SAFE.settings import MEDIA_ROOT
 
 
-from .models import Memory 
+from .models import Memory, Question 
 from .forms import MemoryForm
 
 
@@ -117,6 +117,14 @@ def test_question1(request, memory_id):
     # question = Question.objects.get(id=memory_id)
   context= {'memory': memory}
   return render(request, 'Test/question1.html', context)
+
+  # def test_question1(request, memory_id, question_id):
+  # memory = Memory.objects.get(id=memory_id)
+  # question = Question.objects.get(id=question_id)
+  # selected_choice = Question.answer.get(request.POST['Content'])
+  # # selected_choice = Question.answer.get(request.POST['Content'])
+  # context= {'memory': memory, 'selected_choice': selected_choice, 'question': question}
+  # return render(request, 'Test/question1.html', context)
 
 @login_required
 def test_question2(request, memory_id):
