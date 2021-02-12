@@ -49,7 +49,9 @@
                   </li>
                 </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                    <a class="nav-link" href="{% url 'signup' %}" data-toggle="modal" data-target="#exampleModalCenter">Sign Up</a>
+                    
+                    <!-- Modal -->
                   </li>
                 {% endif %}
             </ul>
@@ -61,6 +63,29 @@
     {% block content %}
     {% endblock %}
   </main>
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Sign Up</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="signup1" method="POST" action="{% url 'signup' %}">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-primary" id="register" value="signup">Sign Up!</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <footer class="page-footer">
     <div class="right">All Rights Reserved, &copy; 2021 Safe by Doireann Herold &nbsp; Logo Design by Teri London</div>
   </footer>

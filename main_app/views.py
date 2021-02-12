@@ -14,13 +14,17 @@ from .forms import MemoryForm
 
 
 def home(request):
-  return render(request, 'home.html')
+  form = UserCreationForm()
+  context ={'form':form}
+  return render(request, 'home.html', context)
 
 def wellness_center(request):
   return render(request, 'Wellness/wellness.html')
 
 def about(request):
-  return render(request, 'about.html')
+  form = UserCreationForm()
+  context ={'form':form}
+  return render(request, 'about.html', context)
 
 @login_required
 def profile(request):

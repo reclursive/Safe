@@ -153,6 +153,7 @@ box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15p
 }
 
 
+
 main {
   flex: 1 0 auto;
   }
@@ -184,11 +185,27 @@ footer {
   left: 126px;
 }
 
+
+
 .btn-primary:hover {
   background-color: #3D3D40;
   border-color:  #979797;
 
 }
+
+#signup1{
+  float: left;
+}
+
+ #register {
+  float:center !important;
+  background-color: #979797;
+  border-color: #3D3D40;
+  border-radius: 50%;
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+  width:135px;
+ 
+ }
 
 
 
