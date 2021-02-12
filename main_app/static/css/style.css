@@ -19,6 +19,15 @@ h1{
   font-size: large;
 }
 
+.wellness-links {
+  text-align: center;
+  font-size: large;
+ 
+}
+a{
+  color:#EDEDED;
+}
+
 
 
 #homeblock {
