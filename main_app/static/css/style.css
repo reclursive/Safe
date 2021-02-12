@@ -17,12 +17,13 @@ h1{
 .wellness {
   text-align: center;
   font-size: large;
+  padding-bottom: 50px;
 }
 
 .wellness-links {
   text-align: center;
   font-size: large;
- 
+ padding-bottom: 50px;
 }
 a{
   color:#EDEDED;
