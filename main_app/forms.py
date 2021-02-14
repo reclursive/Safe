@@ -15,6 +15,8 @@ class MemoryForm(ModelForm):
     # exclude = ('user')
     class Meta:
         model = Memory
+        widgets = {
+        'text': forms.Textarea(attrs={'rows':8, 'cols':35}),}
         fields = ['name', 'img', 'text']
 
 
