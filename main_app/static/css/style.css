@@ -351,6 +351,11 @@ padding-left: 20px;
  text-align: right;
   
 }
+
+footer {
+  position: absolute;
+  right: 0;bottom:0;left:0;
+}
 /* .form-check {
   text-align: center !important;
 } */
