@@ -3,7 +3,11 @@
 {% load static %}
 <div class="softhome">
   <h1 id="homeblock">Safe</h1>
+  {% if request.user.is_authenticated %}
+  <a href="{% url 'profile' %}"><img id="london-logo" src="{% static 'images/Safe.png' %}"/></a>
+  {%else%}
   <a href="/accounts/login/"><img id="london-logo" src="{% static 'images/Safe.png' %}"/></a>
 </div>
+{%endif%}
 
 {% endblock %}
