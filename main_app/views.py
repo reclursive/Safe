@@ -86,7 +86,7 @@ def memory_delete(request, memory_id):
   return redirect('profile')
 
 
-
+@login_required
 def memory_show(request, memory_id):
   current_user = request.user
   memory = Memory.objects.get(id=memory_id)
@@ -111,8 +111,7 @@ def memory_edit(request, memory_id):
       memory.save()
       return redirect('profile')
     else:
-      print(form.errors)
-      error_message = 'Invalid input'
+      memory.name = request.POST['name']
       return redirect('profile')
   context= {'memory': memory}
   return render(request, 'User/memory_edit.html', context)
