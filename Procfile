@@ -1,1 +1,1 @@
-web: gunicorn {SAFE}.wsgi
+web: gunicorn SAFE.wsgi
