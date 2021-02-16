@@ -61,7 +61,7 @@ ROOT_URLCONF = 'SAFE.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 'DIRS': [],
+        'DIRS': [],
         'APP_DIRS': True,
         'DIRS': [str(BASE_DIR.joinpath('templates'))],
         'OPTIONS': {
