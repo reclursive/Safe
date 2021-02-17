@@ -48,7 +48,7 @@ def signup(request):
 
 
 def login(request):
-  return render(request, 'Registration/login.html')
+  return render(request, 'registration/login.html')
 
 
 # def memory_new(request, user_id):
