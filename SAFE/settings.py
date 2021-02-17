@@ -63,7 +63,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
-        'DIRS': [str(BASE_DIR.joinpath('main_app/templates'))],
+        'DIRS': [str(BASE_DIR.joinpath('templates'))],
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -132,7 +132,6 @@ LOGOUT_REDIRECT_URL = '/'
 
 MEDIA_URL = '/images/' 
 
-STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), ) 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
