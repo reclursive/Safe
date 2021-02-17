@@ -3,7 +3,6 @@
 {% block content %}
 <h1 id="homeblock">Log in</h1>
 <form method="POST" action="{% url 'login' %}">
-    {% csrf_token %}
     {{form.as_p}}
 
     <button type="submit" class="btn btn-light" value="login">Log in</button>
