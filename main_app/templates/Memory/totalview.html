@@ -23,9 +23,10 @@ $(document).ready(function(){
 
 <!-- <button type="submit" class="btn btn-light" id="reveal">Reveal</button> -->
 <h2 class="timer">Minutes: 10 </h2>
+{% if memory.img%}
 <div class="clearfix-postshow">
   <img class="memoryphoto" src={{memory.img.url}} alt="" > </div>
-
+{%endif%}
 <div class="coverimage">
   <h5 class="reveal">Cick to Reveal</h5>
   <img class="blurry" src="{% static 'images/blurry-blue.jpg' %}"> 
