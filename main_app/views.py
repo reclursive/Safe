@@ -48,7 +48,9 @@ def signup(request):
 
 
 def login(request):
-  return render(request, 'registration/login.html')
+  form = UserCreationForm()
+  context ={'form':form}
+  return render(request, 'registration/login.html', context)
 
 
 # def memory_new(request, user_id):
